@@ -1,0 +1,48 @@
+fetch('http://localhost:3000', {
+  	method: 'POST',
+    cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+    headers: {
+        'Content-Type': 'application/json',
+		'x-request-id': '1',
+        'api-version': '1.0.0'
+    },
+    body: JSON.stringify({
+        method: 'appruve_company',
+        params: {
+            'company_id': '975c1de7-1a8b-467c-8bb2-5b6eb294224f',
+        },
+    })
+})
+
+
+
+fetch('http://localhost:3000/?method=appruve_company&params={"id": 7}', {
+  	method: 'GET',
+    cache: 'default',
+    headers: {
+        'Content-Type': 'application/json',
+		'x-request-id': '1',
+        'version': '1.0.0'
+    }
+})
+
+
+let url = new URL('http://localhost:5000/')
+
+url.search = new URLSearchParams({
+    method: "appruve_company",
+    params: JSON.stringify({
+        company_id: '975c1de7-1a8b-467c-8bb2-5b6eb294224f',
+    }),
+});
+
+fetch(url, {
+    method: 'GET',
+    cache: 'default',
+    headers: {
+        'Content-Type': 'application/json',
+        'x-request-id': '1',
+        'api-version': '1.0.0',
+    },
+});
+

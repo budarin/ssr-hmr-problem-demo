@@ -1,0 +1,14 @@
+[
+    {
+        "name": "server-compile",
+        "command": "webpack --config ./config/webpack/server/dev.webpack.config.js"
+    },
+    {
+        "name": "ensureServerJsIsCreated",
+        "command": "node ./tools/ensureServerJsIsCreated.js"
+    },
+    {
+        "name": "server-start",
+        "command": "prun ensureServerJsIsCreated && prun server-compile && node ./dist/server/server"
+    }
+]

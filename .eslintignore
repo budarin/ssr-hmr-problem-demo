@@ -1,0 +1,6 @@
+config
+tools
+dist
+jest-coverage
+./*.js
+**/*.d.ts
